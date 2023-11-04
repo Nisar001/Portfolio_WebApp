@@ -8,7 +8,7 @@ const TAB_DATA = [
     title: "Experience",
     id: "experience",
     content: (
-      <ul>
+      <ul className="list-disc pl-2">
         <li>1</li>
         <li>2</li>
       </ul>
@@ -18,7 +18,7 @@ const TAB_DATA = [
     title: "Education",
     id: "education",
     content: (
-      <ul>
+      <ul className="list-disc pl-2">
         <li>B.Tech Computer Science & Engineering</li>
         <li>Higher Secondary School</li>
         <li>High School</li>
@@ -29,7 +29,7 @@ const TAB_DATA = [
     title: "Certifications",
     id: "certifications",
     content: (
-      <ul>
+      <ul className="list-disc pl-2">
         <li>1</li>
         <li>2</li>
       </ul>
@@ -51,14 +51,14 @@ const AboutSection = () => {
     <section className="text-white">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 ">
          <Image src="/images/about-image.jpg" width={500} height={500} alt="About Image"/>
-         <div>
+         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
           I have a good background in Frontend, MERN (MongoDB, Express, React, Node.js), 
           and Java, and I am an enthusiastic student of Computer Science. My areas of competence 
           include database management, design, and web application development. 
           </p>
-          <div className="flex flex-row mt-8">
+          <div className="flex flex-row justify-start mt-8">
             <TabButton 
             selectTab={() => handleTabChange("experience")} 
             active={tab==="experience"}>
