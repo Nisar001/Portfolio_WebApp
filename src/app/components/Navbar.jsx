@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link'
+import Image from 'next/image'
 import React, { useState } from 'react'
 import NavLink from './NavLink'
 import { Bars3Icon, XCircleIcon} from '@heroicons/react/24/solid';
@@ -32,7 +33,11 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-90">
       <div className="flex flex-wrap items-center justify-between mx-auto px-4 py-2">
          <Link href={"/"} className="text-2xl md:text-5xl text-white font-semibold">
-         LOGO
+         <Image
+            src="/images/nisar-logo.png"
+            height={80}
+            width={80}
+         />
          </Link>
          <div className="mobile-menu block md:hidden">
             {
