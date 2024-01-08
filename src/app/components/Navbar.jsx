@@ -35,8 +35,8 @@ const Navbar = () => {
          <Link href={"/"} className="text-2xl md:text-5xl text-white font-semibold">
          <Image
             src="/images/nisar-logo.png"
-            height={80}
-            width={80}
+            height={60}
+            width={60}
          />
          </Link>
          <div className="mobile-menu block md:hidden">

@@ -61,6 +61,7 @@ const projectsData = [
    },
 ]
 const ProjectSection = () => {
+   
    const [tag, setTag] = useState("All");
 
    const handleTagChange = (newTag) => {
