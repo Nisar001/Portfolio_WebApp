@@ -68,6 +68,20 @@ const EmailSection = () => {
                placeholder="Let's talk about..."
             />
          </div> 
+         <div className="mb-6">
+            <label 
+               htmlFor="email" 
+               className="text-white block mb-2 text-sm font-medium">
+            Today's Date
+            </label>
+            <input 
+               type="date" 
+               id="date" 
+               required
+               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+               placeholder="Enter Date"
+            />
+         </div>
          <button
             type="submit"
             className="bg-yellow-500 hover:bg-green-500 text-white font-medium py-2.5 px-5 rounded-lg w-full">

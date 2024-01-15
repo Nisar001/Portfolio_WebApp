@@ -1,23 +1,21 @@
 import mongoose from "mongoose";
-const userRegSchema = new mongoose.Schema({
-   userName: {
-      type: String, required: [true, "User name is Required"],
+const senderRegSchema = new mongoose.Schema({
+   senderName: {
+      type: String, required: [true, "Name is Required"],
       trim: true, 
    },
-   userEmail:{
+   senderEmail:{
       type: String, required: [true, "Email is Required"],
-      trim: true, unique: true,
+      trim: true,
    },
-   userMobile: {
-      type: Number, required: [true, "Monile Number is Required"],
-      unique: true, trim: true,
+   senderMessage: {
+      type: String, required: [true, "Message is Required"],
    },
-   userPassword: {
-      type: String, required: [true, "Password is Required Field"],
-      trim: true, minlength: 6, maxlength: 100,
+   Date: {
+      type: Date, required: [true, "Date is Required"],
    },
 });
 
-const UserRegModel = mongoose.model("userreg", userRegSchema);
+const SenderRegModel = mongoose.model("senderrecord", senderRegSchema);
 
-export default UserRegModel;
+export default SenderRegModel;

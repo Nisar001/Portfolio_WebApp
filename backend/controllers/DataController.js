@@ -1,19 +1,16 @@
-import UserRegModel from "../models/UserRegModel.js";
-import bcrypt from 'bcryptjs';
-const UserRegister = async (req, res) => {
-   const {userName, userEmail, userMobile, userPassword, rPassword} = req.body;
+import SenderRegModel from '../models/DataModel.js';
+
+const RecordRegister = async (req, res) => {
+   const {senderName, senderEmail, senderMessage, Date} = req.body;
    const data = req.body;
-   if (userName && userEmail && userMobile && userPassword & rPassword) {
-      if (userPassword == rPassword) {
+   if (senderName && senderEmail && senderMessage && Date) {
+      if (senderName) {
          try {
-            const saltKey = await bcrypt.genSalt(10);
-            const hashPassword = await bcrypt.hash(data.userPassword, saltKey);
-            data.userPassword = hashPassword;
-            const doc =  new UserRegModel(data);
+            const doc =  new SenderRegModel(data);
             await doc.save();
             res.status(201).send({
                status: "Success",
-               message: "Record Inserted...",
+               message: "Mail Inserted...",
                data,
             });
          }
@@ -21,14 +18,14 @@ const UserRegister = async (req, res) => {
             console.log(err);
             res.send({
                status: "Error", 
-               message: "Unable to Reg."
+               message: "Unable to Insert."
             });
          }
       }
       else {
          res.send({
-            status: "Password Issue",
-            message: "Password and Confirm password does not matched...",
+            status: "Name Issue Issue",
+            message: "Please insert accuratly...",
          });
       };
    }else {
@@ -39,9 +36,9 @@ const UserRegister = async (req, res) => {
    };
 };
 
-const UserDisplay = async(req, res) => {
+const RecordDisplay = async(req, res) => {
    try {
-      const userData = await UserRegModel.find({});
+      const userData = await SenderRegModel.find({});
       if (userData.length > 0){
          res.status(200).send({
             status: "Success",
@@ -63,9 +60,9 @@ const UserDisplay = async(req, res) => {
    }
 };
 
-const UserSearchByID = async (req, res) => {
+const RecordSearchByID = async (req, res) => {
    try {
-      const userData = await UserRegModel.find({ _id: req.params.id });
+      const userData = await SenderRegModel.find({ _id: req.params.id });
       if (userData.length > 0){
          res.status(200).send({
             status: "Success",
@@ -86,9 +83,9 @@ const UserSearchByID = async (req, res) => {
    }
 };
 
-const UserDeleteAll = async (req, res) => {
+const RecordDeleteAll = async (req, res) => {
    try {
-      const userData = await UserRegModel.deleteMany({});
+      const userData = await SenderRegModel.deleteMany({});
       if (userData) {
          res.status(200).send({
             status: "Success",
@@ -109,9 +106,9 @@ const UserDeleteAll = async (req, res) => {
    }
 };
 
-const UserDeleteByID = async (req, res) => {
+const RecordDeleteByID = async (req, res) => {
    try {
-      const userData = await UserRegModel.findByIdAndDelete({
+      const userData = await SenderRegModel.findByIdAndDelete({
          _id: req.params.id,
 
       });
@@ -135,11 +132,11 @@ const UserDeleteByID = async (req, res) => {
    }
 };
 
-const UserUpdateByID = async (req, res) => {
+const RecordUpdateByID = async (req, res) => {
    try {
       console.log(req.body);
       console.log(req.params.id);
-      const userData = await UserRegModel.findByIdAndUpdate({
+      const userData = await SenderRegModel.findByIdAndUpdate({
          _id: req.params.id,
       },
       req.body
@@ -164,4 +161,4 @@ const UserUpdateByID = async (req, res) => {
    }
 };
 
-export default {UserRegister, UserDisplay, UserSearchByID, UserDeleteAll, UserDeleteByID, UserUpdateByID, };
+export default {RecordRegister, RecordDisplay, RecordSearchByID, RecordDeleteAll, RecordDeleteByID, RecordUpdateByID, };

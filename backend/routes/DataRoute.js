@@ -1,14 +1,13 @@
 import express from "express";
 const router = express.Router();
-import UserRegController from "../controllers/UserRegController.js";
+import DataController from "../controllers/DataController.js";
 
 // public routes
-router.post("/register", UserRegController.UserRegister);
-router.post("/login", UserRegController.UserLogin);
-router.get("/display", UserRegController.UserDisplay);
-router.get("/display/:id", UserRegController.UserSearchByID);
-router.delete("/delete", UserRegController.UserDeleteAll);
-router.delete("/delete/:id", UserRegController.UserDeleteByID);
-router.put("/update/:id", UserRegController.UserUpdateByID);
+router.post("/register", DataController.RecordRegister);
+router.get("/display", DataController.RecordDisplay);
+router.get("/display/:id", DataController.RecordSearchByID);
+router.delete("/delete", DataController.RecordDeleteAll);
+router.delete("/delete/:id", DataController.RecordDeleteByID);
+router.put("/update/:id", DataController.RecordUpdateByID);
 // private routes
 export default router;
