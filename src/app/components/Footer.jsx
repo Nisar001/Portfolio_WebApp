@@ -10,6 +10,7 @@ const Footer = () => {
         src="/images/nisar-logo.png"
         height={80}
         width={80}
+        alt="Footer Image"
       />
       </span>
       <p className="text-slate-600">All rights reserved.</p>

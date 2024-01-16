@@ -37,6 +37,7 @@ const Navbar = () => {
             src="/images/nisar-logo.png"
             height={60}
             width={60}
+            alt='Nav Image'
          />
          </Link>
          <div className="mobile-menu block md:hidden">
