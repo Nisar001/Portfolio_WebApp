@@ -5,10 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const EmailSection = () => {
-   const collectData = () => {
-      const uEmail = document.getElementById('email');
-      console.log(uEmail);
-   } 
+   
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-600 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
