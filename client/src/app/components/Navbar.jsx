@@ -9,19 +9,19 @@ import MenuOverlay from './MenuOverlay';
 const navLinks = [
    {
       title: "About",
-      path: "#about",
+      path: "./AboutSection.jsx",
    },
    {
       title: "Skills",
-      path: "#skills"
+      path: "./SkillSection.jsx"
    },
    {
       title: "Projects",
-      path: "#projects"
+      path: "./ProjectSection"
    },
    {
       title: "Contact",
-      path: "#contact",
+      path: "./EmailSection.jsx",
    }
 ]
 
